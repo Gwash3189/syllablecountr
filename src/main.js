@@ -1,16 +1,30 @@
 import syllable from 'syllable'
 
+let nextId = 1
+
+const incrementId = () => nextId = nextId + 1
+const assignId = (newArea) => newArea
+	.querySelector('[data-id]')
+	.setAttribute('data-id', nextId)
+
 const setUpNewTemplate = (template) => {
 	const appArea = document.getElementById('app')
 	const newArea = template.content.cloneNode(true)
 	const counterDiv = newArea.querySelector('[data-count]')
-	assignEventHandlers(newArea, counterDiv)
+
+	assignId(newArea)
+	assignEventHandlers(newArea, counterDiv, nextId)
 	appArea.append(newArea) 
+	incrementId()
 }
 
-const assignEventHandlers = (newArea, countDiv) => {
+const assignEventHandlers = (newArea, countDiv, areaId) => {
 	newArea.querySelector('input').onkeyup = (event) => {
 		countDiv.innerText = `Count: ${syllable(event.target.value)}`
+	}
+
+	newArea.querySelector('button').onclick = () => {
+		document.querySelector(`[data-id="${areaId}"]`).remove()
 	}
 }
 

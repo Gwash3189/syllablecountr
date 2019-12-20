@@ -23,23 +23,65 @@
 			<div class="col-3"></div>
 		</div>
 		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<h2 class="font-light text center subheading">
+					What is a Syllable?
+				</h2>				
+				<p class="font-light">
+					a unit of pronunciation having one vowel sound, with or without surrounding consonants, forming the whole or a part of a word.
+					for example, there are two syllables in water and three in inferno.
+				</p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<h2 class="font-light text center subheading">
+					Why would I use this website?
+				</h2>				
+				<p class="font-light">
+					Counting syllables is great for song writing. 
+					Typically, lyrical groupings have a syllable structure that allow them to share stressed syllables.
+					Counting the syllables in a lyric is a great way to find these stressed syllables and create wonderful lyrics.
+				</p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-8">
+				<h2 class="font-light text heading subheading">
+					How do I use this website?
+				</h2>				
+				<p class="font-light">
+					Enter a single sentence (lyrics) into the text box below. This will count the syllables in your lyric.
+					To add a new input box, and click the button below. 
+				</p>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		<div class="row">
 			<div class="col-12">
 				<button class="button">
-					Add new row
+					Count new syllables
 				</button>
 			</div>
 		</div>
 		<div id="app"></div>
 		<template>
-			<div>
+			<div data-id>
 				<div class="row">
 					<div class="col-2">
 						<p data-count>Count: 0</p>
 					</div>
-						<div class="col-8">
-							<input class="input"  class="text" placeholder="Count me"></input>
-						</div>
-						<div class="col-2"></div>
+					<div class="col-8">
+						<input class="input"  class="text" placeholder="Count me"></input>
+					</div>
+					<div class="col-2">
+						<button class="button remove-lyric-button">Remove</button>
+					</div>
 				</div>
 		</template>
 	</div>
@@ -79,6 +121,11 @@
 		.button:active {
 			background-color: #0078f8;
 			outline: none;
+		}
+
+		.remove-lyric-button {
+			background-color: #dc3545;
+			margin-top: 15px;
 		}
 
 		.input {
